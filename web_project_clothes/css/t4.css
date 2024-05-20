@@ -1,0 +1,368 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+
+
+.header {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+
+
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em 5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 100;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+.logo span {
+  font-size: 25px;
+  color: rgb(76, 0, 255);
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 5em;
+  text-align: center;
+  padding: 0;
+  margin: 0px;
+
+
+}
+
+.navbar a {
+  font-size: 1.15rem;
+  color: rgb(165, 165, 165);
+  text-decoration: none;
+
+  margin-left: 2.5rem;
+  border-radius: 5px;
+  text-align: center;
+  padding: 14px 16px;
+  margin: 10px;
+  font-weight: 800;
+  font-size: 1.5em;
+
+}
+
+.log {
+  float: right;
+}
+
+
+#check {
+  display: none;
+}
+
+.icons {
+  font-size: 2.8rem;
+  color: black;
+  right: 5%;
+  cursor: pointer;
+  display: none;
+}
+
+
+.header a:hover {
+  background-color: rgb(93, 28, 143);
+  color: aliceblue;
+  /* Hover color */
+}
+
+@media(max-width: 1000px) {
+  .header {
+    padding: 0.5rem 5%;
+  }
+
+}
+
+@media(max-width: 945px) {
+  .icons {
+    display: inline-flex;
+  }
+
+  .header {
+    height: 1.9cm;
+  }
+
+  #check:checked~.icons #menu-icon {
+    display: none;
+  }
+
+  #check {
+    display: none;
+  }
+
+
+  .icons #close-icon {
+    display: none;
+
+  }
+
+  #check:checked~.icons #close-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s ease;
+
+  }
+
+  #check:checked~.navbar {
+
+    height: 18rem;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    text-align: center;
+    transition: translative(-50px);
+  }
+}
+
+
+.for_clothes {
+  color: blueviolet;
+  font-family: cursive;
+}
+
+.intro {
+  padding: 20px;
+  margin-left: 90px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: aliceblue;
+
+}
+
+img:hover {
+  border: 5px solid rgb(204, 138, 245);
+  border-radius: 50px;
+}
+
+img {
+  margin-left: 100px;
+  width: 600px;
+  height: 400px;
+}
+
+/* Style for the image */
+.pict {
+  max-width: 100%;
+  height: auto;
+  float: left;
+  /* Float the image to the left */
+  margin-right: 20px;
+  padding: 50px;
+}
+
+/* Style for the text beside the image */
+.text-beside-image {
+  color: aliceblue;
+}
+
+.star {
+  color: rgb(248, 209, 56);
+  font-size: larger;
+}
+
+.kkb {
+  color: blueviolet;
+  font-size: x-large;
+
+}
+
+h1 {
+  color: blueviolet;
+}
+
+.size {
+  color: aliceblue;
+}
+
+.color {
+  color: aliceblue;
+}
+
+
+
+
+
+.button {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  top: -1px;
+  margin: auto;
+  width: 128px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.button:hover::after {
+  filter: blur(30px);
+}
+
+.button:hover::before {
+  transform: rotate(-180deg);
+}
+
+.button:active::before {
+  scale: 0.7;
+}
+
+
+
+
+
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+  --stroke: #666;
+  --fill: #ffc73a;
+  float: left;
+}
+
+.rating input {
+  appearance: unset;
+}
+
+.rating label {
+  cursor: pointer;
+}
+
+.rating svg {
+  width: 2rem;
+  height: 2rem;
+  overflow: visible;
+  fill: transparent;
+  stroke: var(--stroke);
+  stroke-linejoin: bevel;
+  stroke-dasharray: 12;
+  animation: idle 4s linear infinite;
+  transition: stroke 0.2s, fill 0.5s;
+}
+
+@keyframes idle {
+  from {
+    stroke-dashoffset: 24;
+  }
+}
+
+.rating label:hover svg {
+  stroke: var(--fill);
+}
+
+.rating input:checked~label svg {
+  transition: 0s;
+  animation: idle 4s linear infinite, yippee 0.75s backwards;
+  fill: var(--fill);
+  stroke: var(--fill);
+  stroke-opacity: 0;
+  stroke-dasharray: 0;
+  stroke-linejoin: miter;
+  stroke-width: 8px;
+}
+
+@keyframes yippee {
+  0% {
+    transform: scale(1);
+    fill: var(--fill);
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke: var(--stroke);
+    stroke-dasharray: 10;
+    stroke-width: 1px;
+    stroke-linejoin: bevel;
+  }
+
+  30% {
+    transform: scale(0);
+    fill: var(--fill);
+    fill-opacity: 0;
+    stroke-opacity: 1;
+    stroke: var(--stroke);
+    stroke-dasharray: 10;
+    stroke-width: 1px;
+    stroke-linejoin: bevel;
+  }
+
+  30.1% {
+    stroke: var(--fill);
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+  }
+
+  60% {
+    transform: scale(1.2);
+    fill: var(--fill);
+  }
+}
